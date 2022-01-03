@@ -5,16 +5,21 @@ export default function Textform(props) {
     const upClick =()=>{
         const newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to uppercase",'danger');
     }
     const lowClick =()=>{
         const newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase",'danger');
     }
     const capClick =()=>{
         const str = text;
         const str2 = str.charAt(0).toUpperCase() + str.slice(1);
         
         setText(str2);
+        props.showAlert("Capitalized the given text",'danger');
+
+
     }
     const onChangeFunction = (event) =>{
         console.log("On Chnage function Called");
@@ -44,6 +49,7 @@ export default function Textform(props) {
                 <p>{0.004 * text.split(" ").length} minutes required to read this text</p>
 
                 <h2>Preview</h2>
+                
                 <p>{text}</p>
             </div>
             
