@@ -1,10 +1,16 @@
 import React, {useState} from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 
 import Nav from './Nav.js'
 import Textform from './TextForm'
 import Alert from './Alert'
-// import About from './About'
+import About from './About'
 
 function App() {
   const [mode, setmode] = useState('light')
@@ -15,6 +21,8 @@ function App() {
       setmode("dark");
       document.body.style.backgroundColor = "grey";
       document.body.style.color = "white";
+    
+
 
       showAlert('tHIS IS dARK',"success");
     }
@@ -22,6 +30,8 @@ function App() {
       setmode("light");
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
+
+
       showAlert('tHIS IS light',"success");
 
     }
@@ -41,10 +51,19 @@ function App() {
 
   return (
     <>
-    <Nav title="Taxi" about="About Us" contact="Contact Us" showAlert={showAlert} toggleMode={toggleMode} mode={mode}/>
-    <Alert alert={alert}/>
-    <Textform showAlert={showAlert}/>
-    
+    <Router>
+      <Nav title="Taxi" about="About Us" contact="Contact Us" showAlert={showAlert} toggleMode={toggleMode} mode={mode}/>
+      <Alert alert={alert}/>
+
+      <Switch>
+            <Route exact path="/about">
+                <About />
+            </Route>
+            <Route exact path="/">
+                <Textform showAlert={showAlert}/>
+            </Route>
+      </Switch>
+    </Router>
     </>
   );
 }

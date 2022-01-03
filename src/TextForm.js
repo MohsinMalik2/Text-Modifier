@@ -2,6 +2,20 @@ import React , { useState } from 'react';
 
 
 export default function Textform(props) {
+
+    const [btnDanger, setbtnDanger] = useState({
+        color: "#fff",
+        border: "red",
+        bgColor: "red",
+    });
+
+    if(props.mode === 'dark'){
+        setbtnDanger({
+            color: "red",
+            border: "red",
+            bgColor: "transparent",
+        })
+    }
     const upClick =()=>{
         const newText = text.toUpperCase();
         setText(newText);
