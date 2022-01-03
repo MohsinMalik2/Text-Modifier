@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Text-Modifier/static/css/main.31d6cfe0.css",
+    "main.js": "/Text-Modifier/static/js/main.e771f217.js",
+    "static/js/787.4555f260.chunk.js": "/Text-Modifier/static/js/787.4555f260.chunk.js",
+    "index.html": "/Text-Modifier/index.html",
+    "main.e771f217.js.map": "/Text-Modifier/static/js/main.e771f217.js.map",
+    "787.4555f260.chunk.js.map": "/Text-Modifier/static/js/787.4555f260.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.e771f217.js"
+  ]
+}
